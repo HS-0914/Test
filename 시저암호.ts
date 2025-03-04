@@ -16,6 +16,7 @@ n은 1 이상, 25이하인 자연수입니다.
 97-122 소문자
 */
 export {};
+/*
 function solution(s: string, n: number): string {
     let caesar: string = "";
     for (let i = 0; i < s.length; i++) {
@@ -24,32 +25,73 @@ function solution(s: string, n: number): string {
             caesar += s[i];
             continue;
         }
+        // let a = s.charCodeAt(i); <= 90
+        
         // 대문자 + 넘어가는 값
         if (s[i] !== s[i].toLowerCase() && s.charCodeAt(i) + n > 90) {
-            chr = 65 + (s.charCodeAt(i) + n - 91);
+            chr = 65 + (s.charCodeAt(i) + n - 91); // 
         } else if (s[i] !== s[i].toUpperCase() && s.charCodeAt(i) + n > 122) {
             chr = 97 + (s.charCodeAt(i) + n - 123);
         } else {
             chr = s.charCodeAt(i) + n;
+    }
+   caesar += String.fromCharCode(chr);
+}
+return caesar;
+}
+*/
+
+function solution(s: string, n: number): string {
+    let caesar: string = "";
+    for (let i = 0; i < s.length; i++) {
+        if (s[i] === " ") {
+            caesar += s[i];
+            continue;
+        }
+        let chr: number = s.charCodeAt(i);
+        // 대문자 + 넘어가는 값
+        if (chr <= 90 && chr + n > 90) {
+            chr = 65 + (chr + n - 91); //
+        } else if (chr <= 122 && chr + n > 122) {
+            chr = 97 + (chr + n - 123);
+        } else {
+            chr = chr + n;
         }
 
-        /*
-        if (s.charCodeAt(i) >= 65 && s.charCodeAt(i) <= 90) {
-            // 대문자
-            if (s.charCodeAt(i) + n > 90) {
-                chr = 65 + (s.charCodeAt(i) + n - 91);
-            } else {
-                chr = s.charCodeAt(i) + n;
-        }
-        } else {
-            if (s.charCodeAt(i) + n > 122) {
-                chr = 97 + (s.charCodeAt(i) + n - 123);
-            } else {
-                chr = s.charCodeAt(i) + n;
-            }
-        }
-        */
         caesar += String.fromCharCode(chr);
     }
     return caesar;
 }
+
+/*
+function solution(s, n) {
+    let caesar = "";
+    for (let i = 0; i < s.length; i++) {
+        if (s[i] === " ") {
+            caesar += s[i];
+            continue;
+        }
+        let chr = 0;
+        if (s.charCodeAt(i) >= 65 && s.charCodeAt(i) <= 90) {
+            // 대문자
+            if (s.charCodeAt(i) + n > 90) {
+                chr = 65 + (s.charCodeAt(i) + n - 91);
+            }
+            else {
+                chr = s.charCodeAt(i) + n;
+            }
+        }
+        else {
+            if (s.charCodeAt(i) + n > 122) {
+                chr = 97 + (s.charCodeAt(i) + n - 123);
+            }
+            else {
+                chr = s.charCodeAt(i) + n;
+            }
+        }
+        caesar += String.fromCharCode(chr);
+    }
+    return caesar;
+}
+
+*/

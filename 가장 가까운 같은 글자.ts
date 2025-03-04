@@ -18,7 +18,6 @@ a는 자신보다 두 칸, 네 칸 앞에 a가 있습니다. 이 중 가까운 �
 s은 영어 소문자로만 이루어져 있습니다.
 */
 export {};
-// b  ana
 function solution(s: string): number[] {
     let str: string = "";
     let answer: number[] = [];
