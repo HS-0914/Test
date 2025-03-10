@@ -3,7 +3,7 @@ width * 2 + height * 2 - 4 = brown
 
 (width - 2) * (height - 2) = yellow
 */
-function solution(brown: number, yellow: number) {
+function solution(brown: number, yellow: number): number[] {
     let width = 3;
     let height = 3;
     while (width * 2 + height * 2 - 4 <= 5000) {
@@ -18,4 +18,6 @@ function solution(brown: number, yellow: number) {
         height = 3;
         width++;
     }
+
+    return [];
 }
