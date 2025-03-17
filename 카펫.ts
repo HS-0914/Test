@@ -21,3 +21,5 @@ function solution(brown: number, yellow: number): number[] {
 
     return [];
 }
+
+// npx tsx 파일명
