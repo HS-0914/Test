@@ -28,8 +28,6 @@ function solution(genres: string[], plays: number[]): number[] {
         continue;
       }
       if (firstIndex != -1 && secondIndex != -1) {
-        console.log(firstIndex);
-        console.log(secondIndex);
         break;
       }
     }
