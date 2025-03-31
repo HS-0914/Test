@@ -13,7 +13,6 @@ function solution(genres: string[], plays: number[]): number[] {
   }
 
   const albumRank = [...albumMap.entries()].sort((a, b) => b[1][0] - a[1][0]);
-  console.log(albumRank);
   var answer: number[] = [];
   for (const [genre, [, first, second]] of albumRank) {
     let firstIndex = -1;
