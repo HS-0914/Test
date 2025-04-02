@@ -57,9 +57,21 @@ console.log(!!"hello"); // true
 console.log(!!""); // false
 */
 
+/*
 console.log([] + []); // "" (빈 문자열)
 console.log([] + {}); // "[object Object]"
 console.log({} + []); // "[object Object]"
 console.log(true + true); // 2 (true는 1로 변환됨)
 console.log("5" - 1); // 4 (문자열이 숫자로 변환됨)
 console.log("5" + 1); // "51" (문자열 결합)
+*/
+
+const test = new Set();
+const a = [20, 10, 2];
+const b = [10, 2, 20];
+console.log(a.sort().toString());
+
+test.add(a.sort().toString());
+test.add(b.sort().toString());
+console.log(test);
+console.log(test.size);
