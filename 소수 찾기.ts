@@ -1,26 +1,31 @@
 export {};
-function solution(numbers: string) {
-  const numberArr = [...numbers];
-  let count = 0;
-  const test = [];
+function solution(numbers: string): number {
+  const numberArr: string[] = [...numbers];
+  const combiArr: string[] = [];
+  const countSet: Set<number> = new Set();
   for (let i = 1; i <= numberArr.length; i++) {
-    test.push(...getJohap(numberArr, i));
+    combiArr.push(...getJohap(numberArr, i));
   }
-  console.log(test);
-  var answer = 0;
-  return answer;
+  for (const e of combiArr) {
+    const combiNum: number = Number(e);
+    if (combiNum > 1 && isSosu(combiNum)) {
+      countSet.add(combiNum);
+    }
+  }
+  // console.log(countSet);
+  return countSet.size;
 }
 
-function getJohap(arr: string[], selectNum: number) {
-  const results: string[][] = [];
+function getJohap(arr: string[], selectNum: number): string[] {
+  const results: string[] = [];
   if (selectNum === 1) {
-    return arr.map((e) => [e]);
+    return arr;
   }
 
   arr.forEach((fixed, i, origin) => {
-    const rest = [...origin.slice(0, i), ...origin.slice(i + 1)];
-    const nextjohap = getJohap(rest, selectNum - 1);
-    const johap = nextjohap.map((e) => [fixed, ...e]);
+    const rest: string[] = [...origin.slice(0, i), ...origin.slice(i + 1)];
+    const nextjohap: string[] = getJohap(rest, selectNum - 1);
+    const johap: string[] = nextjohap.map((e) => fixed + e);
     results.push(...johap);
   });
 
@@ -35,5 +40,4 @@ function isSosu(num: number): boolean {
   }
   return true;
 }
-
-solution("012");
+// solution("112");
