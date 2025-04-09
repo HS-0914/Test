@@ -1,0 +1,14 @@
+function solution(k: number, dungeons: number[][]): number {
+  /*
+  0 1 2
+  0 2 1
+  1 0 2
+  1 2 0
+  2 1 0
+  2 0 1
+  */
+  while (true) {
+    console.log("gsgdgd");
+  }
+}
+solution(1, [[2]]);
