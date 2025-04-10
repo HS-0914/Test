@@ -66,12 +66,41 @@ console.log("5" - 1); // 4 (문자열이 숫자로 변환됨)
 console.log("5" + 1); // "51" (문자열 결합)
 */
 
-const test = new Set();
-const a = [20, 10, 2];
-const b = [10, 2, 20];
-console.log(a.sort().toString());
+/*
+function* combinations(arr: number[], n: number): Iterable<number[]> {
+  if (n === 0) {
+    yield [];
+    return;
+  }
+  
+  for (let i = 0; i <= arr.length - n; i++) {
+    for (const comb of combinations(arr.slice(i + 1), n - 1)) {
+      console.log(`[arr[i], ...comb] = ${[arr[i], ...comb]}`);
+      yield [arr[i], ...comb];
+    }
+  }
+}
 
-test.add(a.sort().toString());
-test.add(b.sort().toString());
-console.log(test);
-console.log(test.size);
+function solution2(number: number[]): number {
+  let answer = 0;
+  
+  for (const comb of combinations(number, 3)) {
+    console.log(`comb = ${comb}`);
+    const test = comb.reduce((pre, curr) => pre + curr, 0);
+    if (test === 0) answer++;
+  }
+  
+  return answer;
+}
+
+console.log(solution2([-2, -1, 0, 1, 2]));
+*/
+
+const test = ["", [1], [2]];
+for (const iterator of test) {
+  console.log(iterator);
+}
+
+const a = "aaaab";
+const b = "aaab";
+console.log(a < b);
