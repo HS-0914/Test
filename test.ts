@@ -96,11 +96,18 @@ function solution2(number: number[]): number {
 console.log(solution2([-2, -1, 0, 1, 2]));
 */
 
-const test = ["", [1], [2]];
-for (const iterator of test) {
-  console.log(iterator);
-}
+// const test = ["", [1], [2]];
+// for (const iterator of test) {
+//   console.log(iterator);
+// }
 
-const a = "aaaab";
-const b = "aaab";
-console.log(a < b);
+// const a = "aaaab";
+// const b = "aaab";
+// console.log(a < b);
+
+// const test = {};
+// if (test) {
+//   console.log("test");
+// }
+
+console.log([1, 11, 10, 2, 3, 4, 54, 4, 4, 2].sort());
