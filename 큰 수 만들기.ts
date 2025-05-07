@@ -1,14 +1,17 @@
 export {};
-function solution(number: string, k: number) {
-  const arr = [...number].slice(0, number.length - k).map(Number);
+function solution(number: string, k: number): string {
+  let answer: string[] = [];
 
-  console.log(arr);
-  const maxNum = Math.max(...arr);
-  console.log(maxNum);
-  console.log(arr.);
+  for (let i = 0; i < number.length; i++) {
+    while (k > 0 && answer[answer.length - 1] < number[i]) {
+      answer.pop();
+      k--;
+    }
+    answer.push(number[i]);
+  }
 
-  var answer = "";
-  return answer;
+  return answer.slice(0, number.length - k).join("");
 }
 
-solution("1231234", 3);
+console.log(solution("179252841", 6));
+// 2
