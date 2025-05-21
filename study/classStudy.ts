@@ -187,29 +187,29 @@ const MyHelperObject = {
 };
 */
 
-class Foo {
-  static #count = 0;
+// class Foo {
+//   static #count = 0;
 
-  get count() {
-    return Foo.#count;
-  }
+//   get count() {
+//     return Foo.#count;
+//   }
 
-  static {
-    try {
-      const lastInstances = loadLastInstances();
-      Foo.#count += lastInstances.length;
-    } catch {}
-  }
-}
+//   static {
+//     try {
+//       const lastInstances = loadLastInstances();
+//       Foo.#count += lastInstances.length;
+//     } catch {}
+//   }
+// }
 
-class User {
-  #age = 0;
+// class User {
+//   #age = 0;
 
-  get age() {
-    return this.#age; // number 타입
-  }
+//   get age() {
+//     return this.#age; // number 타입
+//   }
 
-  set age(value) {
-    this.#age = value; // value: number 로 자동 추론됨
-  }
-}
+//   set age(value) {
+//     this.#age = value; // value: number 로 자동 추론됨
+//   }
+// }
